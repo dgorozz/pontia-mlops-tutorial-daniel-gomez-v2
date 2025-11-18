@@ -12,8 +12,9 @@ mlflow.set_tracking_uri(os.getenv("MLFLOW_URL", "NO_URL_FOUND"))
 client = MlflowClient()
 
 # Replace with your actual run ID and model artifact path
-with open("run_id.txt", "r") as f:
-    run_id = f.read().strip()
+# with open("run_id.txt", "r") as f:
+#     run_id = f.read().strip()
+run_id = os.getenv('RUN_ID', 'run_id not found')
 model_name =  os.getenv("MODEL_NAME", "no_name")
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 MODEL_DIR = PROJECT_ROOT / "models"
